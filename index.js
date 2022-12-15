@@ -38,13 +38,41 @@ function setNumberOfCells()
 
 function makeGrid(input)
 {
+    const elements = document.getElementsByClassName('cell');
+    if (!elements)
+    {
+    }
+    else
+    {
+        while (elements.length > 0)
+        {
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+    }
+
     gridContainer.style.setProperty('--grid-rows', input);
     gridContainer.style.setProperty('--grid-columns', input);
 
     for (let count = 0; count < (input ** 2); ++count)
     {
         let cell = document.createElement('div');
+        cell.style.setProperty('transition', 'all .07s');
         gridContainer.appendChild(cell).className = 'cell';
+    }
+
+    var onHover = function() {
+        this.style.background = 'red';
+    };
+
+    var outHover = function() {
+        this.style.background = 'white';
+    }
+
+    let gridCells = document.getElementsByClassName('cell');
+    for (let index = 0; index < gridCells.length; ++ index)
+    {
+        gridCells[index].addEventListener('mouseover', onHover);
+        gridCells[index].addEventListener('mouseout', outHover);
     }
 }
 

@@ -7,8 +7,9 @@ Set attributes of button
     Center button at top of page
 */
 
-#gridButton
+body
 {
+    text-align: center;
 }
 
 :root
@@ -20,14 +21,19 @@ Set attributes of button
 #gridContainer
 {
     display: grid;
-    grid-gap: 1em;
+    grid-gap: 0em;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-columns), 1fr);
+    max-height: 900px;
+    min-height: 900px;
+    max-width: 900px;
+    min-width: 900px;
+    overflow: hidden;
 }
 
 .cell
 {
-    padding: 1em;
+    padding: 5px;
     border: 1px solid#ddd;
     text-align: center;
 }
