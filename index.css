@@ -2,4 +2,32 @@
 Set attributes based on class 'cell'
     Set to flexbox
     Set to take up entire space
+
+Set attributes of button
+    Center button at top of page
 */
+
+#gridButton
+{
+}
+
+:root
+{
+    --grid-columns: 1;
+    --grid-rows: 1;
+}
+
+#gridContainer
+{
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+}
+
+.cell
+{
+    padding: 1em;
+    border: 1px solid#ddd;
+    text-align: center;
+}

@@ -1,12 +1,12 @@
 /*
 Create a container for the grid in the DOM
 
-Create eventListener for 'hover'
-    Call function to change grid color leaving pixelated trail
-
 Call reverse when hover ends
 
-Create a button for new grid
+Create eventListener for 'hover' on cells
+    Call function to change grid color leaving pixelated trail
+
+Create button for new grid
 Create eventListener for 'click'
     Call function for number of cells
 
@@ -24,3 +24,32 @@ Create a columns function with input parameter
     Make a for loop with value at 0 that continues so long as value is less than input
     Call rows function for each iteration
 */
+
+function setNumberOfCells()
+{
+    let cellNumber = Number(prompt("Type a number for grid size"));
+    while (cellNumber > 100 || cellNumber <= 0 || cellNumber / 1 !== cellNumber)
+    {
+        cellNumber = Number(prompt("Type a number for grid size"));
+    }
+
+    makeGrid(cellNumber);
+}
+
+function makeGrid(input)
+{
+    gridContainer.style.setProperty('--grid-rows', input);
+    gridContainer.style.setProperty('--grid-columns', input);
+
+    for (let count = 0; count < (input ** 2); ++count)
+    {
+        let cell = document.createElement('div');
+        gridContainer.appendChild(cell).className = 'cell';
+    }
+}
+
+const gridButton = document.getElementById('gridButton');
+gridButton.addEventListener('click', setNumberOfCells);
+document.body.appendChild(gridButton);
+
+const gridContainer = document.getElementById("gridContainer");
