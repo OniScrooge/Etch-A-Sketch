@@ -1,5 +1,5 @@
 # Etch-A-Sketch
-Etch-A-Sketch toy recreated in a webpage
+Etch-A-Sketch toy recreated in a webpage [play](https://oniscrooge.github.io/Etch-A-Sketch/)
 
 # What I learned
 
